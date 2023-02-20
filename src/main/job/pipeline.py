@@ -12,8 +12,9 @@ class PySparkJob(PySparkJobInterface):
     def filter_medical(self, eligibility: DataFrame, medicals: DataFrame) -> DataFrame:
         # TODO: put your code here
         #medicaldf = spark.read.format("csv").option("header",True).schema(medical).load("data/medical.csv")
-        df = spark.read.
-        medicaldf.show()
+        df = spark.read_csv("data/medical.csv", medical)
+        return df.show()
+
 
     def generate_full_name(self, eligibility: DataFrame, medical: DataFrame) -> DataFrame:
         # TODO: put your code here
