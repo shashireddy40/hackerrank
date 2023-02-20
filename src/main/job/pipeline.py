@@ -7,11 +7,13 @@ class PySparkJob(PySparkJobInterface):
 
     def init_spark_session(self) -> SparkSession:
         # TODO: put your code here
-        ...
+        spark = SparkSession.builder.master("local").appName("Data Cleaning").getOrCreate()
 
     def filter_medical(self, eligibility: DataFrame, medicals: DataFrame) -> DataFrame:
         # TODO: put your code here
-        ...
+        #medicaldf = spark.read.format("csv").option("header",True).schema(medical).load("data/medical.csv")
+        df = spark.read.
+        medicaldf.show()
 
     def generate_full_name(self, eligibility: DataFrame, medical: DataFrame) -> DataFrame:
         # TODO: put your code here
